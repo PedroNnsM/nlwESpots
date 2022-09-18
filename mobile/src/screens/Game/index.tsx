@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { FlatList, Image, TouchableOpacity, View } from 'react-native';
+import { FlatList, Image, TouchableOpacity, View, Text } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { useNavigation, useRoute } from '@react-navigation/native'
 import { Entypo } from '@expo/vector-icons'
@@ -75,7 +75,19 @@ export function Game() {
           data={duos}
           keyExtractor={item => item.id}
           renderItem={({item}) => (
-            <Duocard data={item} />
+            <Duocard 
+            data={item}
+            onConnect={() => { }}
+            />
+          )}
+          horizontal
+          style={styles.containerList}
+          contentContainerStyle={[duos.length > 0 ? styles.contentList : styles.emptyListContent]}
+          showsHorizontalScrollIndicator={false}
+          ListEmptyComponent={() => (
+            <Text style={styles.emptyListText}>
+              Não há ánuncios publicados ainda.
+            </Text>
           )}
         />
 

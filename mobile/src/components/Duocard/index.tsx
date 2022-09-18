@@ -1,5 +1,6 @@
 import React from 'react';
-import { Touchable, TouchableOpacity, View } from 'react-native';
+import { Touchable, TouchableOpacity, View, Text} from 'react-native';
+import { GameController } from 'phosphor-react-native';
 import { THEME } from '../../theme';
 import { DouInfo } from '../DouInfo';
 
@@ -16,10 +17,11 @@ export interface DuoCardProps {
 }
 
 interface Props {
-  data: DuoCardProps
+  data: DuoCardProps;
+  onConnect: () => void;
 }
 
-export function Duocard({ data }: Props ) {
+export function Duocard({ data, onConnect }: Props ) {
   return (
     <View style={styles.container}>
 
@@ -41,15 +43,24 @@ export function Duocard({ data }: Props ) {
       />
         
         <DouInfo 
-        label='Chamada de audio'
-        value={data.useVoiceChannel ? "Sim" : "Nao"}
+        label='Chamada de áudio'
+        value={data.useVoiceChannel ? "Sim" : "Não"}
         colorValue={data.useVoiceChannel ? THEME.COLORS.SUCCESS : THEME.COLORS.ALERT}
       />
 
       <TouchableOpacity 
       style={styles.button}
+      onPress={onConnect}
+      > 
+      <GameController 
+      color={THEME.COLORS.TEXT}
+      size={20}
+      />
+      <Text  
+      style={styles.buttonTitle}
       >
-        
+        Conectar
+      </Text>
 
       </TouchableOpacity>
 
