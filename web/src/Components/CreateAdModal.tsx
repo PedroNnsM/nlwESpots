@@ -83,8 +83,8 @@ export function CreateAdModal(){
               </div>
 
               <div className='flex flex-col gap-2 '>
-                <label htmlFor="game">Qual seu nome?</label>
-                <Input type="text" name='game' id='game' placeholder='Como te chamam dentro do game?' />
+                <label htmlFor="name">Qual seu nome?</label>
+                <Input type="text" name='name' id='name' placeholder='Como te chamam dentro do game?' />
               </div>
 
               <div className='grid grid-cols-2 gap-6 '>

@@ -10,6 +10,7 @@ import { Heading } from '../../components/Heading';
 
 
 import { styles } from './styles';
+import React from 'react';
 
 export function Home() {
 

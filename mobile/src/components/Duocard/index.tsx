@@ -1,10 +1,10 @@
-import React from 'react';
 import { Touchable, TouchableOpacity, View, Text} from 'react-native';
 import { GameController } from 'phosphor-react-native';
 import { THEME } from '../../theme';
 import { DouInfo } from '../DouInfo';
 
 import { styles } from './styles';
+import React from 'react';
 
 export interface DuoCardProps {
   id: string;
